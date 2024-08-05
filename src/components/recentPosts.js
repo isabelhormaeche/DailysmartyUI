@@ -5,7 +5,7 @@ import React, { Component } from "react";
 class SearchBar extends Component {
     render() {
         return (
-            <div classNAme= "recent-posts">
+            <div className= "recent-posts">
                 <div className="recent-posts__wrapper">
                     <div className="recent-posts__heading">Recent Posts</div>
 
@@ -15,7 +15,7 @@ class SearchBar extends Component {
                         <li>Recent post 2</li>
                     </ul>
                 </div>
-                
+
             </div>
         )
     }

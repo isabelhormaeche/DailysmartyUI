@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import Logo from "./logo";
 import SearchBar from "./searchBar";
 import RecentPosts from "./recentPosts";
