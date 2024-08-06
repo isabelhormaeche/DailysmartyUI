@@ -8,12 +8,16 @@ const INIT_STATE = {
 }
 
 export default function(state = INIT_STATE, action) {
-    switch (action.types) {
+    switch (action.type) {
         case SET_RECENT_POSTS:
-            
-            return [...state]
-    
+            const recentPosts = action.payload;
+            // return an object
+            return {
+                    ...state, 
+                    recentPosts
+                }
         default:
             return state;
     }
 }
+//postsReducer updates the status with recent posts when the SET_RECENT_POSTS action is dispatched.
