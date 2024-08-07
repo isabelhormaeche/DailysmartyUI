@@ -4,8 +4,6 @@ import axios from 'axios';
 
 export function fetchRecentPosts() {
     return function(dispatch) {
-        //console.log("hello");
-
         axios.get("https://swapi.dev/api/people/")
                 
         .then(response => {
@@ -15,8 +13,21 @@ export function fetchRecentPosts() {
             payload: response.data.results
             })
         })
-        
 
+    }
+}
+
+export function fetchPostsWithQuery(query) {
+    return function(dispatch) {
+        axios.get(`https://swapi.dev/api/people/?search=${query}`)
+                
+        .then(response => {
+            console.log("index response data fetchPostsWithQuery", response.data.results);
+            // dispatch({
+            // type: SET_RECENT_POSTS,
+            // payload: response.data.results
+            // })
+        })
 
     }
 }
