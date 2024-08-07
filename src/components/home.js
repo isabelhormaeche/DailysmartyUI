@@ -9,11 +9,9 @@ import * as actions from '../actions';
 
 class Home extends Component {
 
-// we hit this function when we hit return
+
    handleSearchBarSubmit(query) {
-    // call the action that allows us to search:
      this.props.fetchPostsWithQuery(query);
-     
      this.props.history.push('/results');
   }
   

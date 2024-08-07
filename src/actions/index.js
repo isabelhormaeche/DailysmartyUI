@@ -23,10 +23,10 @@ export function fetchPostsWithQuery(query) {
                 
         .then(response => {
             console.log("index response data fetchPostsWithQuery", response.data.results);
-            // dispatch({
-            // type: SET_RECENT_POSTS,
-            // payload: response.data.results
-            // })
+            //  dispatch({
+            //  type: SET_RECENT_POSTS,
+            //  payload: response.data.results
+            //  })
         })
 
     }
