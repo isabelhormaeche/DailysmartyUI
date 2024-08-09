@@ -59,9 +59,8 @@ class Post extends Component {
                 {this.renderTopics()}
             </div>
             <div className="result-post__title">
-              {/* <a href={this.props.link}>{this.props.name}</a> */}
               <a href={this.props.url}
-                onMouseEnter={() => this.setState({ height: 70 })}
+                onMouseEnter={() => this.setState({ height: 80 })}
                 onMouseLeave={() => this.setState({ height: 0 })}
               >
               {this.props.name}</a>
