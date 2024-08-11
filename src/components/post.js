@@ -11,14 +11,14 @@ class Post extends Component {
       }
    }
 
-    renderTopics() {
-        // let topics = this.props.associated_topics.map((topic, index) => {
-        //   return <span className="post-topic" key={index}>{topic}</span>
-          let topics = this.props.films.map((film, index) => {
-            return <span className="post-topic" key={index}>{film}</span>
-      })
-        return topics;
-      }
+     renderTopics() {
+         // let topics = this.props.associated_topics.map((topic, index) => {
+         //   return <span className="post-topic" key={index}>{topic}</span>
+           let topics = this.props.films.map((film, index) => {
+             return <span className="post-topic" key={index}>{film}</span>
+       })
+         return topics;
+       }
     
  
   renderLinks() {
@@ -60,7 +60,7 @@ class Post extends Component {
             </div>
             <div className="result-post__title">
               <a href={this.props.url}
-                onMouseEnter={() => this.setState({ height: 80 })}
+                onMouseEnter={() => this.setState({ height: 180})}
                 onMouseLeave={() => this.setState({ height: 0 })}
               >
               {this.props.name}</a>
