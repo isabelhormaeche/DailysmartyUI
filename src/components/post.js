@@ -11,12 +11,29 @@ class Post extends Component {
       }
    }
 
+
+// Pretty Film Link Names
+
+   getNameForFilmLink(str) {
+
+    var n = str.lastIndexOf('/', str.length - 2); // Encuentra el penúltimo '/', ejemplo: "https://swapi.dev/api/films/1/", 
+    var link = str.substring(str.indexOf("film"), n + 2); // Obtiene el substring desde "films" hasta el último '/'
+    // Sumo 2 para incluir el nº y el penúltimo "/" , ejemplo sale:  films/1
+   
+    return link;
+  }
+
+
+
   renderTopics() {
          // let topics = this.props.associated_topics.map((topic, index) => {
          //   return <span className="post-topic" key={index}>{topic}</span>
       let topics = this.props.films.map((film, index) => {
-      return <span className="post-topic" key={index}>{film}</span>
-      })
+      //return <span className="post-topic" key={index}>{film}</span>
+      
+      //return <a href={film}>{film}</a>
+      return <a href={film}>{this.getNameForFilmLink(film)}</a> // prettify  film links
+    })
       return topics;
   }
 
@@ -47,7 +64,8 @@ class Post extends Component {
 
 
  // Versión usando.......... Star wars API, donde los links terminan en formatostarship/XX/:
-getNameForPostLink(str) {
+
+ getNameForPostLink(str) {
 
   var n = str.lastIndexOf('/', str.length - 2); // Encuentra el penúltimo '/', ejemplo: "https://swapi.dev/api/starships/48/"
   
@@ -75,6 +93,10 @@ getNameForPostLink(str) {
           )
 
       })
+
+      if(links == 0) {
+        return <div className="no-content">No Post Links</div>
+    }
       return links;
   }
 

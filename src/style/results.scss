@@ -26,27 +26,45 @@
    align-content: space-around;
    grid-row-gap: 22px;
 
-   .result-post__topics > * {
-       color: $color-blue-one;
-       font-size: 14px;
-       line-height: 17px;
-       font-weight: normal;
-   }
+
+   .result-post__topics {
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); 
+    gap: 10px; 
+
+    > * {
+        color: $color-blue-one;
+        font-size: 14px;
+        line-height: 17px;
+        font-weight: normal;
+        text-decoration: none;
+    }
+
+  
+}
+
+
 
    .result-post__title a {
        color: $color-gray-one;
        font-size: 18px;
        line-height: 22px;
+
+       text-decoration: none; 
    }
 
    .result-post__links {
        display: flex; // to show sets of box + url in a row
+      
    }
 }
 
 .post-link {
    min-height: 70px;
    display: flex;
+
+   flex-basis: 205px ; // tamaño inicial del elemento antes de que el espacio se distribuya
+   margin-right: 30px; // espacio entre cada elemento
 
    .post-link__box {
        min-width: 70px;
@@ -58,6 +76,7 @@
        color: $color-gray-one;
        font-size: 14px;
        line-height: 17px;
-       margin-right: 15px; // para separar starship/XX del box derecho.
+       text-decoration: none;
+       //margin-right: 15px; // para separar starship/XX del box derecho-- > Mejor lo ajustamos arriba en post-link, con flex-basis
    }
 }
