@@ -63,7 +63,8 @@ class Post extends Component {
                 onMouseEnter={() => this.setState({ height: 180})}
                 onMouseLeave={() => this.setState({ height: 0 })}
               >
-              {this.props.name}</a>
+              {this.props.name}
+              </a>
             </div>
             <AnimateHeight
             duration={500}
